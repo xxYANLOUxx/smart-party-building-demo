@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智慧党建 | 智能问答工作台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-mark">智慧党建</span>
+          <span class="org-switcher"><i data-lucide="building-2"></i>招商银行党委<i data-lucide="chevron-down"></i></span>
+        </div>
+        <nav class="top-nav" aria-label="主导航">
+          <a href="#">首页</a>
+          <a href="#">新闻中心</a>
+          <a href="#">学习教育</a>
+          <a id="partyManagementNav" href="#contextBusinessPage">党务管理</a>
+          <a href="#">我是党员</a>
+          <a href="#">快速配置</a>
+          <a href="#">党建缓存配置</a>
+          <a class="nav-more" href="#" title="更多功能" aria-label="更多功能"><i data-lucide="more-horizontal"></i></a>
+          <a class="assistant-top-entry" id="assistantNav" href="#fullAssistantPage"><span class="nav-ai-badge"><i data-lucide="sparkles"></i><em>AI</em></span><span class="assistant-nav-text">党建助手</span></a>
+        </nav>
+        <div class="top-actions">
+          <button class="icon-button" title="工作台" aria-label="工作台"><i data-lucide="layout-dashboard"></i></button>
+          <button class="icon-button" title="消息" aria-label="消息"><i data-lucide="message-square"></i></button>
+          <button class="icon-button" title="日程" aria-label="日程"><i data-lucide="calendar-days"></i></button>
+          <span class="role-label"><i data-lucide="user-round"></i>党支部/总支工作人员</span>
+          <div class="user-avatar">邱</div>
+          <span class="user-name">邱云云<i data-lucide="chevron-down"></i></span>
+        </div>
+      </header>
+
+      <div class="body-shell">
+        <aside class="sidebar">
+          <nav class="sidebar-menu" id="sidebarMenu" aria-label="党务管理菜单">
+            <div class="nav-entry"><button class="nav-level-1" id="sidebarPartyManagementNav" type="button"><i data-lucide="network"></i><span>党务首页</span></button></div>
+            <div class="nav-entry">
+              <button class="nav-level-1 has-children" type="button" data-nav-toggle="orgMenu" aria-expanded="false"><i data-lucide="building-2"></i><span>党组织管理</span><i class="side-chevron" data-lucide="chevron-right"></i></button>
+              <div class="nav-level-2-menu" id="orgMenu">
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="orgStructureMenu" aria-expanded="false"><span>党组织架构</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="orgStructureMenu">
+                    <button class="nav-level-3" type="button">党组织设置</button>
+                    <button class="nav-level-3" type="button">党组织委员设置</button>
+                    <button class="nav-level-3" type="button">党组织工作人员设置</button>
+                    <button class="nav-level-3" type="button">党小组设置</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="orgAdjustMenu" aria-expanded="false"><span>组织调整</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="orgAdjustMenu">
+                    <button class="nav-level-3" type="button">党组织换届</button>
+                    <button class="nav-level-3" type="button">党组织更名</button>
+                    <button class="nav-level-3" type="button">隶属机构变更</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>党组织成立</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>党组织撤销</span></button></div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="orgChangeMenu" aria-expanded="false"><span>党组织换届</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="orgChangeMenu">
+                    <button class="nav-level-3" type="button">按期换届</button>
+                    <button class="nav-level-3" type="button">提前换届</button>
+                    <button class="nav-level-3" type="button">延期换届</button>
+                    <button class="nav-level-3" type="button">延期换届申请</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="committeeElectionMenu" aria-expanded="false"><span>党组织委员改选</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="committeeElectionMenu">
+                    <button class="nav-level-3" type="button">委员增补选</button>
+                    <button class="nav-level-3" type="button">隶属机构变更</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>党内职务筛查</span></button></div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="orgStatisticsMenu" aria-expanded="false"><span>党组织统计</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="orgStatisticsMenu">
+                    <button class="nav-level-3" type="button">党组织统计列表</button>
+                    <button class="nav-level-3" type="button">生成公文管理</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-entry">
+              <button class="nav-level-1 has-children is-open has-active-child" type="button" data-nav-toggle="memberMenu" aria-expanded="true"><i data-lucide="users"></i><span>党员管理</span><i class="side-chevron" data-lucide="chevron-right"></i></button>
+              <div class="nav-level-2-menu open" id="memberMenu">
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="memberInfoMenu" aria-expanded="false"><span>党员信息</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="memberInfoMenu">
+                    <button class="nav-level-3" type="button">党员列表</button>
+                    <button class="nav-level-3" type="button">无归属党员部门筛查</button>
+                    <button class="nav-level-3" type="button">归属调整记录</button>
+                    <button class="nav-level-3" type="button">党员信息统计</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row"><button class="nav-level-2 active" id="contextBusinessNav" type="button"><span>组织关系转接</span></button></div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="developMemberMenu" aria-expanded="false"><span>发展党员</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="developMemberMenu">
+                    <button class="nav-level-3" type="button">发展党员审批</button>
+                    <button class="nav-level-3" type="button">预备党员转正</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-entry">
+              <button class="nav-level-1 has-children" type="button" data-nav-toggle="lifeMenu" aria-expanded="false"><i data-lucide="calendar-check-2"></i><span>组织生活管理</span><i class="side-chevron" data-lucide="chevron-right"></i></button>
+              <div class="nav-level-2-menu" id="lifeMenu">
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="meetingMenu" aria-expanded="false"><span>三会一课</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="meetingMenu">
+                    <button class="nav-level-3" type="button">支部党员大会</button>
+                    <button class="nav-level-3" type="button">支委会</button>
+                    <button class="nav-level-3" type="button">党小组会</button>
+                    <button class="nav-level-3" type="button">讲党课</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>组织生活会</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>通用会议</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>主题党日活动</span></button></div>
+              </div>
+            </div>
+            <div class="nav-entry">
+              <button class="nav-level-1 has-children" type="button" data-nav-toggle="feeMenu" aria-expanded="false"><i data-lucide="landmark"></i><span>党费管理</span><i class="side-chevron" data-lucide="chevron-right"></i></button>
+              <div class="nav-level-2-menu" id="feeMenu">
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="feeIncomeMenu" aria-expanded="false"><span>党费收入</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="feeIncomeMenu">
+                    <button class="nav-level-3" type="button">党费收入台账</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="feeExpenseMenu" aria-expanded="false"><span>党费支出</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="feeExpenseMenu">
+                    <button class="nav-level-3" type="button">党费预算方案</button>
+                    <button class="nav-level-3" type="button">党费使用申请</button>
+                    <button class="nav-level-3" type="button">党费报销申请</button>
+                    <button class="nav-level-3" type="button">预算使用情况</button>
+                    <button class="nav-level-3" type="button">党费支出台账</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="feeStatisticsMenu" aria-expanded="false"><span>党费统计</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="feeStatisticsMenu">
+                    <button class="nav-level-3" type="button">党费结存统计</button>
+                    <button class="nav-level-3" type="button">党费收支统计</button>
+                    <button class="nav-level-3" type="button">党费使用统计</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-entry"><button class="nav-level-1" type="button"><i data-lucide="vote"></i><span>投票评议</span></button></div>
+            <div class="nav-entry">
+              <button class="nav-level-1 has-children" type="button" data-nav-toggle="systemMenu" aria-expanded="false"><i data-lucide="settings"></i><span>系统配置</span><i class="side-chevron" data-lucide="chevron-right"></i></button>
+              <div class="nav-level-2-menu" id="systemMenu">
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="permissionMenu" aria-expanded="false"><span>权限管理</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="permissionMenu">
+                    <button class="nav-level-3" type="button">党委权限包</button>
+                    <button class="nav-level-3" type="button">党委工作权限设置</button>
+                    <button class="nav-level-3" type="button">党内职务权限管理</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>党内职务设置</span></button></div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="staffMenu" aria-expanded="false"><span>机构员工管理</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="staffMenu">
+                    <button class="nav-level-3" type="button">机构管理</button>
+                    <button class="nav-level-3" type="button">员工管理</button>
+                  </div>
+                </div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>首页配置</span></button></div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="meetingConfigMenu" aria-expanded="false"><span>三会一课配置</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="meetingConfigMenu"><button class="nav-level-3" type="button">会议议题类型</button></div>
+                </div>
+                <div class="nav-level-2-row">
+                  <button class="nav-level-2 has-children" type="button" data-nav-toggle="feeConfigMenu" aria-expanded="false"><span>党费设置</span><i data-lucide="chevron-right"></i></button>
+                  <div class="nav-level-3-menu" id="feeConfigMenu">
+                    <button class="nav-level-3" type="button">党费使用范围</button>
+                    <button class="nav-level-3" type="button">党费科目配置</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-entry">
+              <button class="nav-level-1 has-children" type="button" data-nav-toggle="informationMenu" aria-expanded="false"><i data-lucide="newspaper"></i><span>资讯管理</span><i class="side-chevron" data-lucide="chevron-right"></i></button>
+              <div class="nav-level-2-menu" id="informationMenu">
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>栏目管理</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>新闻中心管理</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>学习教育管理</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>自定义资讯管理</span></button></div>
+                <div class="nav-level-2-row"><button class="nav-level-2" type="button"><span>党务公开</span></button></div>
+              </div>
+            </div>
+          </nav>
+          <button class="sidebar-collapse" title="收起侧栏" aria-label="收起侧栏"><i data-lucide="chevron-left"></i></button>
+          <div class="sidebar-footer">
+            <span>系统版本 V1.2.0</span>
+            <span>帮助中心</span>
+          </div>
+        </aside>
+
+        <main class="main-content">
+          <div class="system-tabs" aria-label="系统页签">
+            <span>页签名称</span><span>页签名称</span><button class="active">组织关系转入 <i data-lucide="x"></i></button>
+          </div>
+          <div class="content-inner">
+            <section class="business-page transfer-page active" id="contextBusinessPage" aria-label="组织关系转入页面">
+              <nav class="business-breadcrumb" aria-label="面包屑导航">
+                <a href="#contextBusinessPage">党务管理</a><i data-lucide="chevron-right"></i>
+                <a href="#contextBusinessPage">党员管理</a><i data-lucide="chevron-right"></i>
+                <a href="#contextBusinessPage">组织关系转接</a><i data-lucide="chevron-right"></i>
+                <span aria-current="page">组织关系转入</span>
+              </nav>
+              <div class="transfer-layout">
+                <aside class="transfer-tree">
+                  <div class="tree-search"><input placeholder="请输入党组织名称" /><button title="搜索" aria-label="搜索"><i data-lucide="search"></i></button></div>
+                  <div class="tree-scroll" id="transferOrgTree" aria-label="党组织层级树">
+                    <div class="tree-item is-open" data-tree-level="1">
+                      <div class="tree-row">
+                        <button class="tree-expander" type="button" aria-label="收起招商银行根党委" aria-expanded="true"><i data-lucide="chevron-right"></i></button>
+                        <button class="tree-node root" type="button"><strong>招商银行根党委</strong></button>
+                      </div>
+                      <div class="tree-children tree-level-2">
+                        <div class="tree-item" data-tree-level="2">
+                          <div class="tree-row">
+                            <button class="tree-expander" type="button" aria-label="展开招商银行本部党委" aria-expanded="false"><i data-lucide="chevron-right"></i></button>
+                            <button class="tree-node" type="button"><span>招商银行本部党委</span></button>
+                          </div>
+                          <div class="tree-children tree-level-3 is-collapsed">
+                            <div class="tree-item" data-tree-level="3">
+                              <div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>本部机关党总支</span></button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tree-item is-open" data-tree-level="2">
+                          <div class="tree-row">
+                            <button class="tree-expander" type="button" aria-label="收起招商银行深圳分行党委" aria-expanded="true"><i data-lucide="chevron-right"></i></button>
+                            <button class="tree-node" type="button"><span>招商银行深圳分行党委</span></button>
+                          </div>
+                          <div class="tree-children tree-level-3">
+                            <div class="tree-item is-open" data-tree-level="3">
+                              <div class="tree-row">
+                                <button class="tree-expander" type="button" aria-label="收起深圳分行公司金融党总支" aria-expanded="true"><i data-lucide="chevron-right"></i></button>
+                                <button class="tree-node" type="button"><span>深圳分行公司金融党总支</span></button>
+                              </div>
+                              <div class="tree-children tree-level-4">
+                                <div class="tree-item is-selected" data-tree-level="4">
+                                  <div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>公司金融党总支第一党支部</span></button></div>
+                                </div>
+                                <div class="tree-item" data-tree-level="4">
+                                  <div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>公司金融党总支第二党支部</span></button></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tree-item" data-tree-level="3">
+                              <div class="tree-row">
+                                <button class="tree-expander" type="button" aria-label="展开深圳分行零售金融党总支" aria-expanded="false"><i data-lucide="chevron-right"></i></button>
+                                <button class="tree-node" type="button"><span>深圳分行零售金融党总支</span></button>
+                              </div>
+                              <div class="tree-children tree-level-4 is-collapsed">
+                                <div class="tree-item" data-tree-level="4">
+                                  <div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>零售金融党总支第一党支部</span></button></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tree-item" data-tree-level="2">
+                          <div class="tree-row">
+                            <button class="tree-expander" type="button" aria-label="展开招商银行合肥分行党委" aria-expanded="false"><i data-lucide="chevron-right"></i></button>
+                            <button class="tree-node" type="button"><span>招商银行合肥分行党委</span></button>
+                          </div>
+                          <div class="tree-children tree-level-3 is-collapsed">
+                            <div class="tree-item" data-tree-level="3"><div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>合肥分行党总支</span></button></div></div>
+                          </div>
+                        </div>
+                        <div class="tree-item" data-tree-level="2"><div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>招商银行杭州分行党委</span></button></div></div>
+                        <div class="tree-item" data-tree-level="2"><div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>招商银行南京分行党委</span></button></div></div>
+                        <div class="tree-item" data-tree-level="2"><div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>招商银行上海分行党委</span></button></div></div>
+                        <div class="tree-item" data-tree-level="2"><div class="tree-row"><span class="tree-expander-spacer" aria-hidden="true"></span><button class="tree-node" type="button"><span>招商银行北京分行党委</span></button></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+                <section class="transfer-content">
+                  <div class="transfer-stage-tabs" role="tablist" aria-label="组织关系转入状态">
+                    <button role="tab"><span>未办结</span><b>40</b></button>
+                    <button class="active" role="tab" aria-selected="true"><span>接收介绍信</span><b>24</b><i data-lucide="check"></i></button>
+                    <button role="tab"><span>返还回执</span><b>20</b></button>
+                    <button role="tab"><span>检查档案</span><b>10</b></button>
+                    <button class="settled" role="tab"><span>已办结</span><b>40</b></button>
+                  </div>
+                  <form class="transfer-filter-form" id="transferQueryForm">
+                    <label>员工编号<div><input placeholder="请输入" /></div></label>
+                    <label>生成时间<div class="date-range"><input placeholder="开始时间" /><span>至</span><input placeholder="结束时间" /><i data-lucide="calendar-days"></i></div></label>
+                    <div class="transfer-query-actions"><button type="reset" class="transfer-reset">重置</button><button type="submit" class="transfer-query">查询</button></div>
+                  </form>
+                  <div class="transfer-toolbar"><button class="transfer-primary" id="transferAdd"><i data-lucide="circle-plus"></i>转入新增</button><button>催转</button><button>设置频率</button><button>导入</button><button>导出名单</button></div>
+                  <div class="transfer-table-wrap">
+                    <table class="transfer-table">
+                      <thead><tr><th><input type="checkbox" aria-label="全选" /></th><th>员工编号</th><th>姓名</th><th>部门</th><th>政治面貌</th><th>生成时间</th><th>状态</th><th>操作</th></tr></thead>
+                      <tbody>
+                        <tr><td><input type="checkbox" aria-label="选择廖鸿山" /></td><td class="transfer-number">1000000</td><td>廖鸿山</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-06-10 09:27:49</td><td><span class="transfer-status done"></span>已办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                        <tr><td><input type="checkbox" aria-label="选择蔡泽" /></td><td class="transfer-number">7911447</td><td>蔡泽</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-05-30 12:37:31</td><td><span class="transfer-status waiting"></span>未办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                        <tr><td><input type="checkbox" aria-label="选择侯绿" /></td><td class="transfer-number">9457549</td><td>侯绿</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-08-14 08:44:35</td><td><span class="transfer-status done"></span>已办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                        <tr><td><input type="checkbox" aria-label="选择许霖仲" /></td><td class="transfer-number">3410792</td><td>许霖仲</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-09-17 13:40:48</td><td><span class="transfer-status done"></span>已办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                        <tr><td><input type="checkbox" aria-label="选择卢毛雪" /></td><td class="transfer-number">3688584</td><td>卢毛雪</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-10-07 15:22:54</td><td><span class="transfer-status waiting"></span>未办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                        <tr><td><input type="checkbox" aria-label="选择潘煜" /></td><td class="transfer-number">2073490</td><td>潘煜</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-06-13 12:33:17</td><td><span class="transfer-status done"></span>已办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                        <tr><td><input type="checkbox" aria-label="选择顾国龙" /></td><td class="transfer-number">6971128</td><td>顾国龙</td><td>一号部门名称</td><td>中国共产党党员</td><td>2022-10-09 11:27:38</td><td><span class="transfer-status waiting"></span>未办结</td><td><button>编辑</button><button>删除</button></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="transfer-pagination"><span>共 12 个应用</span><button title="上一页" aria-label="上一页"><i data-lucide="chevron-left"></i></button><button class="active">1</button><span>···</span><button>4</button><button>5</button><button>6</button><button>7</button><span>···</span><button>50</button><button title="下一页" aria-label="下一页"><i data-lucide="chevron-right"></i></button><button class="page-size">10 / 页 <i data-lucide="chevron-down"></i></button><span>跳至</span><input aria-label="跳转页码" /><span>页</span></div>
+                </section>
+              </div>
+            </section>
+
+            <section class="diagnosis-page" id="diagnosisPage" aria-label="智能诊断页面">
+              <div class="diagnosis-workbench">
+                <aside class="diagnosis-task-list" aria-label="诊断任务列表">
+                  <div class="diagnosis-panel-title"><div><span class="page-eyebrow">AI 党建助手</span><h1>诊断任务</h1></div><button class="icon-action" id="refreshDiagnosisTasks" type="button" title="刷新任务" aria-label="刷新任务"><i data-lucide="refresh-cw"></i></button></div>
+                  <button class="diagnosis-new-task" id="newDiagnosisTask" type="button"><i data-lucide="plus"></i>新建诊断</button>
+                  <div class="diagnosis-task-group"><span class="diagnosis-task-label">进行中</span>
+                    <button class="diagnosis-task active" type="button" data-diagnosis-task="monthly"><span class="diagnosis-task-icon"><i data-lucide="scan-search"></i></span><span><strong>7 月主题党日诊断</strong><small>招商银行党委 · 处理中</small></span><i data-lucide="chevron-right"></i></button>
+                    <button class="diagnosis-task" type="button" data-diagnosis-task="development"><span class="diagnosis-task-icon"><i data-lucide="file-check-2"></i></span><span><strong>党员发展材料核验</strong><small>总行营业部党委 · 待开始</small></span><i data-lucide="chevron-right"></i></button>
+                  </div>
+                  <div class="diagnosis-task-group"><span class="diagnosis-task-label">已完成</span>
+                    <button class="diagnosis-task" type="button" data-diagnosis-task="recheck"><span class="diagnosis-task-icon completed"><i data-lucide="circle-check"></i></span><span><strong>组织生活会整改回检</strong><small>2026-07-18 · 已生成报告</small></span><i data-lucide="chevron-right"></i></button>
+                    <button class="diagnosis-task" type="button" data-diagnosis-task="meeting"><span class="diagnosis-task-icon completed"><i data-lucide="clipboard-check"></i></span><span><strong>二季度三会一课诊断</strong><small>2026-07-09 · 已生成报告</small></span><i data-lucide="chevron-right"></i></button>
+                  </div>
+                </aside>
+
+                <section class="diagnosis-config-panel" aria-label="诊断范围配置">
+                  <div class="diagnosis-panel-title"><div><span class="page-eyebrow">诊断范围</span><h2 id="diagnosisTitle">7 月主题党日诊断</h2></div><span class="diagnosis-status" id="diagnosisStatus"><i data-lucide="clock-3"></i>待执行</span></div>
+                  <p class="diagnosis-config-intro">选择业务、时间和组织范围后发起诊断。系统将按已授权材料、在线流程和对应规则生成报告。</p>
+                  <form class="diagnosis-scope-form" id="diagnosisScopeForm">
+                    <label>业务范围
+                      <select id="diagnosisBusiness" aria-label="选择诊断业务范围">
+                        <option value="主题党日">主题党日</option>
+                        <option value="党员发展">党员发展</option>
+                        <option value="三会一课">三会一课</option>
+                        <option value="组织生活会">组织生活会</option>
+                      </select>
+                    </label>
+                    <label>时间范围
+                      <select id="diagnosisTime" aria-label="选择诊断时间范围">
+                        <option value="2026 年 7 月">2026 年 7 月</option>
+                        <option value="2026 年第 2 季度">2026 年第 2 季度</option>
+                        <option value="近 30 天">近 30 天</option>
+                        <option value="近 90 天">近 90 天</option>
+                      </select>
+                    </label>
+                    <label>组织范围
+                      <select id="diagnosisOrganization" aria-label="选择诊断组织范围">
+                        <option value="招商银行党委及下属组织">招商银行党委及下属组织</option>
+                        <option value="总行营业部党委">总行营业部党委</option>
+                        <option value="上海分行党委及下属组织">上海分行党委及下属组织</option>
+                        <option value="南京分行党委及下属组织">南京分行党委及下属组织</option>
+                      </select>
+                    </label>
+                    <div class="diagnosis-form-actions"><button class="business-primary" id="runDiagnosis" type="submit"><i data-lucide="scan-search"></i>开始诊断</button><button class="outline-action" id="resetDiagnosis" type="button"><i data-lucide="rotate-ccw"></i>重置</button></div>
+                  </form>
+                  <div class="diagnosis-scope-note"><i data-lucide="shield-check"></i><span>报告仅使用当前角色已授权的业务数据；涉及整改任务、材料归档和通知发送时，需在后续页面确认后执行。</span></div>
+                </section>
+
+                <section class="diagnosis-report-panel" aria-label="诊断报告展示区">
+                  <div class="diagnosis-report-heading"><div><span class="page-eyebrow">诊断报告</span><h2 id="diagnosisReportTitle">7 月主题党日诊断报告</h2><p id="diagnosisReportMeta">报告更新时间：等待执行诊断</p></div><button class="icon-action" id="previewDiagnosisReport" type="button" title="预览报告" aria-label="预览报告"><i data-lucide="maximize-2"></i></button></div>
+                  <div class="diagnosis-report-scroll" id="diagnosisReportContent">
+                    <section class="diagnosis-report-section" data-diagnosis-section="basic"><h3>基本信息</h3><dl class="diagnosis-basic-info"><div><dt>业务类型</dt><dd id="reportBusiness">主题党日</dd></div><div><dt>时间范围</dt><dd id="reportTime">2026 年 7 月</dd></div><div><dt>组织范围</dt><dd id="reportOrganization">招商银行党委及下属组织</dd></div><div><dt>诊断状态</dt><dd id="reportStatus">待执行</dd></div></dl></section>
+                    <section class="diagnosis-report-section" data-diagnosis-section="statistics"><h3>问题统计</h3><div class="diagnosis-report-metrics" id="diagnosisReportMetrics"><div><b>--</b><span>检查对象</span></div><div><b>--</b><span>发现问题</span></div><div><b>--</b><span>需整改</span></div><div><b>--</b><span>无需整改</span></div></div></section>
+                    <section class="diagnosis-report-section" data-diagnosis-section="issues"><h3>诊断问题</h3><div class="diagnosis-issue-list" id="diagnosisIssueList"><div class="diagnosis-empty-report"><i data-lucide="file-search"></i><span>设置诊断范围后点击“开始诊断”，报告将在此展示问题、证据和处理要求。</span></div></div></section>
+                    <section class="diagnosis-report-section is-hidden" data-diagnosis-section="recheck" id="diagnosisRecheckSection"><h3>整改/差异情况</h3><div id="diagnosisRecheckContent"></div></section>
+                    <section class="diagnosis-report-section" data-diagnosis-section="summary"><h3>诊断总结</h3><p class="diagnosis-summary" id="diagnosisSummary">当前尚未生成诊断结论。</p></section>
+                  </div>
+                  <div class="diagnosis-report-footer"><button class="outline-action" id="downloadDiagnosisReport" type="button"><i data-lucide="download"></i>下载报告</button><button class="business-primary" id="startRecheck" type="button"><i data-lucide="refresh-cw"></i>发起回检</button></div>
+                </section>
+              </div>
+            </section>
+
+            <div class="modal-backdrop" id="rectificationDialog" aria-hidden="true">
+              <section class="rectification-dialog" role="dialog" aria-modal="true" aria-labelledby="rectificationDialogTitle">
+                <div class="rectification-dialog-header"><div><span class="page-eyebrow">整改闭环</span><h2 id="rectificationDialogTitle">通知整改</h2></div><button class="icon-action" id="closeRectificationDialog" type="button" title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+                <p class="rectification-dialog-intro" id="rectificationIssueSummary">请为当前问题设置整改责任人和期限。</p>
+                <form id="rectificationForm">
+                  <label>整改人<select id="rectifierSelect" required><option value="党支部组织委员">党支部组织委员</option><option value="党支部书记">党支部书记</option><option value="党支部档案管理员">党支部档案管理员</option></select></label>
+                  <label>整改期限（天）<input id="rectificationDays" type="number" min="1" max="365" value="7" required /></label>
+                  <label>备注<textarea id="rectificationNote" rows="3" placeholder="补充整改要求或提醒事项"></textarea></label>
+                  <div class="rectification-dialog-actions"><button class="outline-action" id="cancelRectification" type="button">取消</button><button class="business-primary" type="submit"><i data-lucide="send"></i>发送通知</button></div>
+                </form>
+              </section>
+            </div>
+
+            <section class="assistant-workbench full-assistant-page" id="fullAssistantPage" aria-label="智能问答工作台">
+              <aside class="assistant-rail">
+                <div class="assistant-identity">
+                  <div class="assistant-kicker">AI 党建助手</div>
+                  <h1>让党务工作<br /><strong>更清晰、更高效</strong></h1>
+                  <p>查制度 · 问流程 · 写材料</p>
+                  <div class="ip-stage">
+                    <img src="./assets/assistant.png" alt="党建小助手" />
+                  </div>
+                  <div class="assistant-version">版本 V1.0</div>
+                </div>
+                <div class="history-heading"><span>历史对话</span><small>共 7 条</small></div>
+                <div class="session-search"><i data-lucide="search"></i><input id="historySearch" placeholder="搜索历史对话" /></div>
+                <div class="history-list">
+                  <button class="history-item" data-history-question="帮我查询主题党日开展情况" data-history-answer="近 30 天招商银行党委共开展主题党日活动 12 次，其中 9 次已完成归档，3 次待补充材料。"><i data-lucide="message-square-text"></i><span><strong>主题党日活动开展情况</strong><small>08-15 14:32</small></span></button>
+                  <button class="history-item" data-history-question="主题党日活动完成后需要归档哪些材料？" data-history-answer="通常需归档活动方案、通知、签到表、现场照片、会议或活动记录、学习材料及活动总结，具体以本单位现行制度为准。"><i data-lucide="message-square-text"></i><span><strong>主题党日归档材料清单</strong><small>08-15 10:18</small></span></button>
+                  <button class="history-item" data-history-question="帮我生成主题党日活动总结" data-history-answer="可以生成。请补充活动主题、日期、地点、参与人数和主要内容，我会先生成表单供你确认。"><i data-lucide="message-square-text"></i><span><strong>活动总结材料初稿</strong><small>08-14 16:45</small></span></button>
+                  <button class="history-item" data-history-question="发展党员需要准备哪些材料？" data-history-answer="材料会随发展阶段变化，通常包括入党申请、培养考察、政治审查、培训、支部大会及审批备案等材料。"><i data-lucide="message-square-text"></i><span><strong>发展党员材料清单</strong><small>08-13 11:06</small></span></button>
+                  <button class="history-item" data-history-question="三会一课材料归档有什么要求？" data-history-answer="应保证会议时间、地点、主持人、参会人员、议题、讨论过程和决议完整，并确保签到、照片与会议记录相互对应。"><i data-lucide="message-square-text"></i><span><strong>三会一课归档要求</strong><small>08-12 09:40</small></span></button>
+                  <button class="history-item" data-history-question="组织生活会材料被退回，下一步怎么处理？" data-history-answer="先查看退回原因和具体材料项，修订后重新提交；如流程节点已锁定，需要联系上级党组织确认后续处理方式。"><i data-lucide="message-square-text"></i><span><strong>组织生活会流程咨询</strong><small>08-11 15:21</small></span></button>
+                  <button class="history-item" data-history-question="组织关系转入如何办理？" data-history-answer="需核对党员身份、介绍信、原党组织、转入党组织和有效期限等信息，确认无误后发起组织关系转入流程。"><i data-lucide="message-square-text"></i><span><strong>组织关系转接办理指引</strong><small>08-09 13:08</small></span></button>
+                </div>
+              </aside>
+
+              <section class="chat-panel">
+                <div class="chat-header">
+                  <div>
+                    <div class="eyebrow">党建小助手</div>
+                    <h2>智能问答</h2>
+                  </div>
+                  <div class="chat-header-actions">
+                    <button class="subtle-button" id="clearChat"><i data-lucide="rotate-ccw"></i>清空对话</button>
+                  </div>
+                </div>
+
+                <div class="chat-scroll" id="chatScroll">
+                  <div class="welcome-block">
+                    <div class="welcome-avatar"><img src="./assets/assistant.png" alt="" /></div>
+                    <div>
+                      <h3>你好，我是党建小助手</h3>
+                      <p>可以帮你查询党建制度与流程、查看权限内业务状态，或协助生成党务材料。</p>
+                    </div>
+                  </div>
+
+                  <div class="quick-prompts">
+                    <button data-prompt="主题党日活动完成后需要归档哪些材料？"><i data-lucide="book-open-check"></i>归档材料清单</button>
+                    <button data-prompt="帮我查询主题党日开展情况"><i data-lucide="chart-no-axes-combined"></i>查询活动情况</button>
+                    <button data-prompt="帮我生成主题党日活动总结"><i data-lucide="file-pen-line"></i>生成活动总结</button>
+                    <button data-prompt="组织生活会材料被退回，下一步怎么处理？"><i data-lucide="route"></i>流程问题咨询</button>
+                  </div>
+
+                  <div class="message user-message">
+                    <div class="message-meta">我 · 10:28</div>
+                    <div class="user-bubble">帮我查询主题党日开展情况</div>
+                  </div>
+
+                  <div class="message assistant-message">
+                    <div class="message-meta assistant-meta"><span class="small-avatar"><img src="./assets/assistant.png" alt="" /></span>党建小助手 · 10:28</div>
+                    <div class="assistant-bubble">
+                      <p>为了准确查询，请补充以下信息。查询范围只在你有权限的组织内生效。</p>
+                      <form class="constraint-form" id="queryForm">
+                        <div class="form-title"><span>补充查询条件</span><span class="required-note">* 为必填项</span></div>
+                        <label class="field-label">所属党组织 <span>*</span></label>
+                        <button class="select-field" type="button" data-select="org"><span id="orgValue">招商银行党委</span><i data-lucide="chevron-down"></i></button>
+                        <div class="select-menu" data-menu="org">
+                          <button type="button" data-value="招商银行党委">招商银行党委</button>
+                          <button type="button" data-value="招商银行本部党委">招商银行本部党委</button>
+                          <button type="button" data-value="安徽省下级机构">安徽省下级机构</button>
+                        </div>
+                        <div class="two-fields">
+                          <div>
+                            <label class="field-label">业务范围 <span>*</span></label>
+                            <button class="select-field" type="button" data-select="business"><span id="businessValue">主题党日</span><i data-lucide="chevron-down"></i></button>
+                            <div class="select-menu" data-menu="business">
+                              <button type="button" data-value="主题党日">主题党日</button>
+                              <button type="button" data-value="三会一课">三会一课</button>
+                              <button type="button" data-value="组织生活会">组织生活会</button>
+                            </div>
+                          </div>
+                          <div>
+                            <label class="field-label">时间范围 <span>*</span></label>
+                            <button class="select-field" type="button" data-select="time"><span id="timeValue">近 30 天</span><i data-lucide="chevron-down"></i></button>
+                            <div class="select-menu" data-menu="time">
+                              <button type="button" data-value="近 7 天">近 7 天</button>
+                              <button type="button" data-value="近 30 天">近 30 天</button>
+                              <button type="button" data-value="本季度">本季度</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-actions">
+                          <button type="button" class="ghost-button" id="cancelQuery">取消</button>
+                          <button type="submit" class="primary-button"><i data-lucide="search"></i>确认查询</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div id="dynamicResult"></div>
+                </div>
+
+                <div class="composer-wrap">
+                  <div class="composer-hint"><i data-lucide="shield-check"></i>回答将基于已授权资料和业务数据，内容仅供参考，请以实际业务规则和系统数据为准</div>
+                  <div class="composer">
+                    <textarea id="messageInput" rows="1" placeholder="请输入问题，例如：主题党日活动完成后需要归档哪些材料？"></textarea>
+                    <div class="composer-actions">
+                      <button class="icon-button light" title="上传材料" aria-label="上传材料"><i data-lucide="paperclip"></i></button>
+                      <button class="send-button" id="sendMessage" title="发送" aria-label="发送"><i data-lucide="send"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <aside class="task-panel">
+                <div class="task-panel-header">
+                  <div>
+                    <div class="eyebrow">WORKSPACE</div>
+                    <h2>助手任务</h2>
+                  </div>
+                  <button class="icon-button light" title="刷新任务" aria-label="刷新任务" id="refreshTasks"><i data-lucide="refresh-cw"></i></button>
+                </div>
+                <div class="task-section">
+                  <div class="section-title-row"><h3>快捷任务</h3><span>常用</span></div>
+                  <button class="task-action" data-prompt="帮我查询主题党日开展情况"><span class="action-icon red"><i data-lucide="chart-no-axes-combined"></i></span><span><strong>查询活动情况</strong><small>按组织和时间查询</small></span><i data-lucide="chevron-right"></i></button>
+                  <button class="task-action" data-prompt="帮我生成主题党日活动总结"><span class="action-icon amber"><i data-lucide="file-pen-line"></i></span><span><strong>生成材料初稿</strong><small>基于已确认事实生成</small></span><i data-lucide="chevron-right"></i></button>
+                  <button class="task-action" data-prompt="主题党日活动完成后需要归档哪些材料？"><span class="action-icon dark"><i data-lucide="book-open-check"></i></span><span><strong>查询制度流程</strong><small>查看现行依据</small></span><i data-lucide="chevron-right"></i></button>
+                </div>
+                <div class="task-section recent-tasks">
+                  <div class="section-title-row"><h3>最近任务</h3><button class="text-button" id="viewAllTasks">查看全部</button></div>
+                  <button class="recent-task active" data-prompt="帮我查询主题党日开展情况"><span class="status-dot processing"></span><span><strong>主题党日开展情况</strong><small>刚刚 · 等待补充条件</small></span></button>
+                  <button class="recent-task" data-prompt="帮我生成主题党日活动总结"><span class="status-dot done"></span><span><strong>活动总结材料初稿</strong><small>今天 09:42 · 草稿已保存</small></span></button>
+                  <button class="recent-task" data-prompt="组织生活会材料被退回，下一步怎么处理？"><span class="status-dot review"></span><span><strong>组织生活会流程咨询</strong><small>昨天 · 待人工确认</small></span></button>
+                </div>
+                <div class="task-tip"><i data-lucide="info"></i><span>涉及组织范围、人员状态和审批数据的查询，会在对话中请求必要信息。</span></div>
+                <button class="diagnosis-entry" id="diagnosisEntry"><span><i data-lucide="scan-search"></i><span><strong>进入智能诊断</strong><small>范围筛选与报告预览在此使用</small></span></span><i data-lucide="arrow-up-right"></i></button>
+              </aside>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <aside class="contextual-ai-panel" id="contextualAiPanel" aria-label="当前页面智能问答" aria-hidden="true">
+        <div class="context-panel-header">
+          <div class="context-panel-title">
+            <span class="context-avatar"><img src="./assets/assistant.png" alt="党建小助手" /></span>
+            <div><span class="page-eyebrow">当前页面助手</span><h2>智能问答</h2></div>
+          </div>
+          <button class="icon-button light" id="closeContextualAi" title="关闭页面助手" aria-label="关闭页面助手"><i data-lucide="x"></i></button>
+        </div>
+        <div class="context-source"><i data-lucide="panel-right"></i><div><strong>正在协助：组织关系转入</strong><span>可基于当前页面的业务规则和字段提问</span></div></div>
+        <div class="context-chat-feed" id="contextChatFeed">
+          <div class="context-message assistant">
+            <span class="context-message-avatar"><img src="./assets/assistant.png" alt="" /></span>
+            <div><span class="context-message-name">党建小助手</span><p>这是党务管理中的“组织关系转入”页面。你可以问我接收介绍信、催转、档案检查或当前流程怎么处理。</p></div>
+          </div>
+          <div class="context-suggestions" aria-label="常用问题">
+            <button type="button" data-context-prompt="接收介绍信需要核对哪些信息？">接收介绍信需要核对哪些信息？</button>
+            <button type="button" data-context-prompt="当前未办结记录下一步怎么处理？">当前未办结记录下一步怎么处理？</button>
+            <button type="button" data-context-prompt="组织关系转入的办理流程是什么？">组织关系转入的办理流程是什么？</button>
+          </div>
+        </div>
+        <form class="context-composer" id="contextQuestionForm">
+          <div class="context-input-wrap"><textarea id="contextQuestionInput" rows="2" placeholder="针对当前党务页面提问"></textarea><button class="send-button" type="submit" title="发送问题" aria-label="发送问题"><i data-lucide="send"></i></button></div>
+          <div class="context-composer-hint"><i data-lucide="shield-check"></i>回答基于当前页面与已授权党建资料</div>
+        </form>
+        <div class="context-route-links">
+          <button class="context-route-link" id="openAssistantPage" type="button"><span><i data-lucide="sparkles"></i><span><strong>进入党建助手</strong><small>处理材料生成与复杂问答</small></span></span><i data-lucide="arrow-up-right"></i></button>
+          <button class="context-route-link" id="openDiagnosisPage" type="button"><span><i data-lucide="scan-search"></i><span><strong>进入智能诊断</strong><small>按范围生成检查报告</small></span></span><i data-lucide="arrow-up-right"></i></button>
+        </div>
+      </aside>
+
+      <div class="assistant-widget" id="assistantWidget" aria-label="党建助手快捷入口">
+        <button class="floating-launcher" id="floatingLauncher" title="打开 AI 党建助手" aria-label="打开 AI 党建助手" aria-expanded="false">
+          <span class="floating-avatar"><img src="./assets/assistant.png" alt="党建小助手头像" /></span>
+        </button>
+        <div class="floating-tools">
+          <button class="floating-tool" id="feedbackEntry" title="意见信箱" aria-label="意见信箱">
+            <i data-lucide="inbox"></i><span>意见<br />信箱</span>
+          </button>
+          <span class="floating-divider" aria-hidden="true"></span>
+          <button class="floating-tool" id="historyEntry" title="历史版本" aria-label="历史版本">
+            <i data-lucide="clipboard-list"></i><span>历史<br />版本</span>
+          </button>
+        </div>
+        <span class="floating-divider" aria-hidden="true"></span>
+        <button class="floating-arrow" id="floatingExpand" title="收起 AI 党建助手" aria-label="收起 AI 党建助手" aria-expanded="true">
+          <i class="floating-arrow-collapse" data-lucide="chevrons-right"></i>
+          <i class="floating-arrow-expand" data-lucide="chevrons-left"></i>
+        </button>
+        <div class="launcher-popover" id="launcherPopover" role="status">
+          <div class="popover-title"><span class="status-live"></span>AI 党建助手</div>
+          <p>当前页面可以使用智能问答，点击开始体验党务辅助功能。</p>
+          <button id="focusChat">打开 AI 工作台 <i data-lucide="arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+    <script src="./assets/lucide.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
